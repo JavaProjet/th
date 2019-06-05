@@ -23,13 +23,17 @@ void structure (Noeud* root, int level )
 
 int main(){
 	ArbreB a(5);
-	Noeud n4(4);
-	Noeud n2(2);
-	Noeud n3(3);
-	Noeud n8(8);
-	Noeud n7(7);
-	Noeud n6(6);
-	Noeud n1(1);
-	ArbreB::inserer(&n4,&a,'<');
+	ArbreB::inserer(new Noeud(4),&a,'<');
+	ArbreB::inserer(new Noeud(2),&a,'<');
+	ArbreB::inserer(new Noeud(1),&a,'<');
+	ArbreB::inserer(new Noeud(3),&a,'<');
+	ArbreB::inserer(new Noeud(8),&a,'<');
+	ArbreB::inserer(new Noeud(6),&a,'<');
+	ArbreB::inserer(new Noeud(7),&a,'<');
+	ArbreB::inserer(new Noeud(9),&a,'<');
+	structure(a.getN(),0);
+	//Noeud* recher = ArbreB::rechercher(x,a.getN());
+	Noeud* recher = a.rechercher(2,a.getN());
+	structure(recher,0);
 	return 0;
 }

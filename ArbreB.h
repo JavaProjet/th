@@ -13,4 +13,5 @@ class ArbreB{
 		Noeud* getN();
 		void setN(Noeud* n);
 		static void inserer(Noeud* n, ArbreB* a, char ordre);
+		Noeud* rechercher(int x, Noeud* n);
 };

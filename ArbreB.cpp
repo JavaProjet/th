@@ -41,7 +41,7 @@ void ArbreB::setN(Noeud* n){
 	this->n = n;
 }
 
-static void ArbreB::inserer(Noeud* n, ArbreB* a, char ordre){
+void ArbreB::inserer(Noeud* n, ArbreB* a, char ordre){
 	if(n){
 		if(a->getN() == NULL) a->setN(n);
 		else {
@@ -64,3 +64,18 @@ static void ArbreB::inserer(Noeud* n, ArbreB* a, char ordre){
 		}
 	}
 }*/
+
+Noeud* ArbreB::rechercher(int x, Noeud* n){
+	Noeud* tmp = NULL;
+	if(n == NULL) return NULL;
+	else {
+		if(n->getX() == x) return n;
+		else{
+			if(n->getGauche() != NULL) tmp = rechercher(x, n->getGauche());
+			if(tmp) return tmp;
+			if(n->getDroite() != NULL) tmp = rechercher(x, n->getDroite());
+			if(tmp) return tmp;
+		}
+	}
+	
+}
